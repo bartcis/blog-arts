@@ -1,1 +1,1 @@
-export { getSingleDog } from './Dogs/dogs-api';
+export { useGetSingleArticle } from './articles/articles.api';

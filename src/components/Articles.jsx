@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import {useGetSingleArticle} from '../api/';
 import './Articles.scss';
 
 export const Articles = () => {
   const [state, setState] = useState([]);
+  const [articleRequest, abortArticleRequest] = useGetSingleArticle({articleId: '2'});
 
   useEffect(() => {
     const abortController = new AbortController();
