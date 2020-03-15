@@ -7,32 +7,44 @@ const articles = [
 ];
 
 const Header = () => (
-  <header className="App_header">
+  <nav className="App_header">
     <ul className="App_header_list">
       <li className="App_header_link">
-        <a href="/">Home</a>
+        <a href="/" title="Go to home page">
+          Home
+        </a>
       </li>
       <li className="App_header_link">
-        <a href="/">About</a>
+        <a href="/" title="Go to about section">
+          About
+        </a>
       </li>
       <li className="App_header_link">
-        <a href="/">Contact</a>
+        <a href="/" title="Go to contact section">
+          Contact
+        </a>
       </li>
     </ul>
-  </header>
+  </nav>
 );
 
 const SidePanel = () => (
   <aside className="App_side-panel">
     <ul className="App_side-panel_list">
       <li className="App_side-panel_link">
-        <a href="/">Articles</a>
+        <a href="/" title="Go to articles section">
+          Articles
+        </a>
       </li>
       <li className="App_side-panel_link">
-        <a href="/">Contact</a>
+        <a href="/" title="Go to contact section">
+          Contact
+        </a>
       </li>
       <li className="App_side-panel_link">
-        <a href="/">Footer</a>
+        <a href="/" title="Go to footer section">
+          Footer
+        </a>
       </li>
     </ul>
   </aside>
@@ -43,8 +55,12 @@ const Articles = ({ arts }) => (
     <h1>Articles:</h1>
     {arts.map(({ title, desc, url }) => (
       <article className="App_content_article">
-        <a href={url}>{title}</a>
-        <p>{desc}</p>
+        <a href={url} title={`${desc}. Read more`}>
+          {title}
+        </a>
+        <p>
+          <span>{desc}</span>
+        </p>
       </article>
     ))}
   </section>
@@ -62,7 +78,9 @@ const Contact = () => (
         <input type="checkbox" name="terms" />
         Do you accept T&C?
       </label>
-      <button type="submit">Contact Us</button>
+      <button type="submit" aria-label="Submit contact form">
+        Contact Us
+      </button>
     </form>
   </section>
 );
