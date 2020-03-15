@@ -1,38 +1,65 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 1fr 60px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  color: #fff;
+  &_header {
+    grid-area: 1 / 1 / 2 / 3;
+    border-bottom: 1px solid #fff;
+    &_list {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    &_link {
+      margin: 0 1rem;
+    }
   }
-  to {
-    transform: rotate(360deg);
+  &_side-panel {
+    grid-area: 2 / 1 / 3 / 2;
+    border-right: 1px solid #fff;
+    &_link {
+      margin: 1rem;
+    }
+  }
+  &_content {
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 1rem;
+    &_article {
+      margin: 1rem 0;
+      border: 1px solid #fff;
+      padding: 1rem;
+    }
+    &_contact {
+      .form {
+        input[type='text'],
+        button {
+          display: block;
+          border: 1px solid #fff;
+          margin: 1rem 0;
+          padding: 0.5rem 1rem;
+          background-color: transparent;
+          color: #fff;
+        }
+      }
+    }
+  }
+  &_footer {
+    grid-area: 3 / 1 / 4 / 3;
+    border-top: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
   }
 }
